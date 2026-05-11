@@ -3,7 +3,7 @@
   <p><strong>No secrets. No leaks. No stress.</strong></p>
   <p>A beautifully simple, interactive Node.js CLI tool for detecting leaked secrets, scanning git history, and validating environment files before they become a problem.</p>
   
-  [![npm version](https://badge.fury.io/js/noleaks.svg)](https://badge.fury.io/js/noleaks)
+  ![npm](https://img.shields.io/npm/v/noleaks)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 </div>
 
