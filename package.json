@@ -1,6 +1,6 @@
 {
   "name": "noleaks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js CLI tool for detecting leaked secrets and validating environment files",
   "type": "module",
   "main": "src/index.js",
