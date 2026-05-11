@@ -34,24 +34,27 @@ noleaks
 
 ## 🛠️ Interactive Menu
 
-When you run `noleaks` in your terminal, you'll be greeted with a slick ASCII banner and an arrow-key navigable menu. No need to memorize complex CLI flags!
+When you run `noleaks` in your terminal, you'll be greeted with a slick, bold ASCII banner and a numbered matrix menu. No need to memorize complex CLI flags!
 
 ```text
-? What do you want to do?
-❯ 🔍 Check .env vs .env.example
-  🚨 Scan for secret patterns  
-  📜 Scan Git history
-  🛠️  Fix issues automatically
-  📄 Generate .env.example
-  🚪 Exit
+  1) Validate .env             2) Scan secrets             3) Audit Git history
+  4) Auto-remediate issues     5) Scaffold .env.example    6) Exit
+  7) 🌐 Scan public GitHub URL
+  
+✔ What do you want to do? (1-7):
 ```
 
-## ✨ Features
+## ✨ Features Explained
 
-- **Check `.env` vs `.env.example`**: Ensures your local environment is up-to-date and no required keys are left blank.
-- **Scan for Secret Patterns**: Uses highly accurate RegEx to catch leaked `AKIA...`, `ghp_...`, `sk_live_...`, and more.
-- **Scan Git History**: Runs native git commands to find out if you ever accidentally committed your secrets in the past.
-- **Fix Issues Automatically**: With one click, it will add `.env` to your `.gitignore` and generate a sanitized `.env.example` template based on your current setup.
+**Understanding `.env` vs `.env.example`:**
+Think of your code like a locked house. Your `.env` file holds the **real keys** (passwords, API keys) and should *never* be uploaded to GitHub. Your `.env.example` file holds the **empty keyring** (blank passwords) so other developers know what keys they need to create to run your code.
+
+- **1) Validate .env**: Compares your `.env` file against your `.env.example` file. If you added a new password to `.env` but forgot to add a blank placeholder for it in `.env.example`, it will warn you to fix it so your code doesn't crash for other developers!
+- **2) Scan secrets**: Checks your local `.env` file for highly sensitive patterns (like AWS Access Keys, Stripe Keys, or GitHub tokens) to ensure you aren't accidentally exposing real secrets.
+- **3) Audit Git history**: Even if you delete an accidentally committed `.env` file, it still lives in your Git history! This runs a deep search through all your past commits to see if a `.env` file was ever leaked.
+- **4) Auto-remediate issues**: The magic button. It instantly adds `.env` to your `.gitignore` file (making it impossible to push to GitHub), and automatically generates a safe, blank `.env.example` file based on your real variables.
+- **5) Scaffold .env.example**: If you are starting a brand new project and don't have an example file, this generates a clean, empty template for you instantly.
+- **7) Scan public GitHub URL**: Paste any public GitHub link, and it will securely download the code into a hidden temporary folder, scan every single file for leaked passwords, and then delete the downloaded code completely so it leaves zero trace on your computer!
 - **Zero Config**: No JSON or YAML config files required. Just run it.
 
 ## 🤝 Contributing
