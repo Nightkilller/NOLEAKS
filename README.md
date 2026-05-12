@@ -17,6 +17,9 @@ Accidentally pushing a `.env` file or leaking an API key is every developer's ni
 - Dig through your Git history to see if a `.env` file was ever committed.
 - Automatically fix issues (e.g., adding `.env` to `.gitignore`, scaffolding `.env.example`).
 
+📦 npm → https://lnkd.in/gD6GvpV7
+
+
 ## 🚀 Getting Started
 
 You can run `noleaks` directly via `npx` without even installing it:
